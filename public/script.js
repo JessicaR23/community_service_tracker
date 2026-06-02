@@ -31,12 +31,12 @@ document.getElementById("serviceForm").addEventListener("submit", async (e) => {
   const activity_date = document.getElementById("activity_date").value;
   const hours         = document.getElementById("hours").value;
   const recipient     = document.getElementById("recipient").value;
+  const description   = document.getElementById("description").value; // FIX: Included missing description field
 
   const res = await fetch("/api/service", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    // BUG 1 is inside the object below (one field is missing)
-    body: JSON.stringify({ student_name, student_id, activity_date, hours, recipient }),
+    body: JSON.stringify({ student_name, student_id, activity_date, hours, recipient, description }),
   });
 
   const msg = document.getElementById("formMessage");
@@ -46,7 +46,6 @@ document.getElementById("serviceForm").addEventListener("submit", async (e) => {
     e.target.reset();
   } else {
     msg.textContent = "Something went wrong. Check the console.";
-    msg.style.color = "red";
   }
 });
 
