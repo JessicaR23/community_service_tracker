@@ -14,7 +14,7 @@
 
 const db = require('../db');
 
-// COMMENT FOR getAllRecords: // Retrieves all community service records from the database, ordered by activity date from newest to oldest.
+// Retrieves all community service records from the database, ordered by activity date from newest to oldest.
 // Returns an array of record objects.
 const getAllRecords = async () => {
   const res = await db.query(
@@ -23,7 +23,7 @@ const getAllRecords = async () => {
   return res.rows;
 };
 
-// COMMENT FOR addRecord: // Adds a new community service record to the database.
+// Adds a new community service record to the database.
 // Takes student_name (string), student_id (string/int), activity_date (date), hours (float), and recipient (string) as parameters.
 // Returns the newly created record object.
 const addRecord = async (student_name, student_id, activity_date, hours, recipient) => {
@@ -37,7 +37,7 @@ const addRecord = async (student_name, student_id, activity_date, hours, recipie
   return res.rows[0];
 };
 
-// COMMENT FOR getHoursByStudent: // Calculates the total community service hours aggregated by each student.
+// Calculates the total community service hours aggregated by each student.
 // Takes no parameters.
 // Returns an array of objects containing student_name, student_id, and total_hours, sorted alphabetically by student name.
 const getHoursByStudent = async () => {
