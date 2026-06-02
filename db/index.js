@@ -36,6 +36,6 @@ const schema = fs.readFileSync(schemaPath, "utf8");
   }
 })();
 
-// SECTION 5 — Export the database pool instance so that it can be imported and used by other parts of your application to execute database queries.
+// SECTION 5 — //Export the database pool instance so that it can be imported and used by other parts of your application to execute database queries.
 module.exports = pool;
 module.exports = pool;
